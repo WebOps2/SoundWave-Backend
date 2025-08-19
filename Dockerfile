@@ -2,6 +2,7 @@
 FROM gradle:8.8-jdk21 AS build
 WORKDIR /app
 COPY . .
+RUN chmod +x gradlew
 RUN ./gradlew clean bootJar --no-daemon
 
 # ---- Run stage ----
